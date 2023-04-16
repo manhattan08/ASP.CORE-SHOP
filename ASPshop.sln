@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPshop", "ASPshop\ASPshop.csproj", "{1C4CA000-7958-4C18-9F48-209C288A4D0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{91874A15-503F-48EA-B567-A4DF9900EB87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B4C582DC-DF80-41E0-A95D-1C1D7A567D9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C4CA000-7958-4C18-9F48-209C288A4D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C4CA000-7958-4C18-9F48-209C288A4D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C4CA000-7958-4C18-9F48-209C288A4D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C4CA000-7958-4C18-9F48-209C288A4D0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91874A15-503F-48EA-B567-A4DF9900EB87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91874A15-503F-48EA-B567-A4DF9900EB87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91874A15-503F-48EA-B567-A4DF9900EB87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91874A15-503F-48EA-B567-A4DF9900EB87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C582DC-DF80-41E0-A95D-1C1D7A567D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C582DC-DF80-41E0-A95D-1C1D7A567D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C582DC-DF80-41E0-A95D-1C1D7A567D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C582DC-DF80-41E0-A95D-1C1D7A567D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
