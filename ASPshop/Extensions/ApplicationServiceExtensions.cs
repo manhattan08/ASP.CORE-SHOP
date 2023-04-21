@@ -3,6 +3,7 @@ using Core.Interfaces;
 using Infrastucture.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 namespace ASPshop.Extensions;
 
@@ -16,7 +17,12 @@ public static class ApplicationServiceExtensions
         {
             opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
         });
-
+        services.AddSingleton<IConnectionMultiplexer>(c => {
+            var configuration = ConfigurationOptions.Parse(config
+                .GetConnectionString("Redis"), true);
+            return ConnectionMultiplexer.Connect(configuration);
+        });
+        services.AddScoped<IBasketRepository, BasketRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -34,6 +40,14 @@ public static class ApplicationServiceExtensions
                 };
                 return new BadRequestObjectResult(errorsResponse);
             };
+        });
+
+        services.AddCors(opt =>
+        {
+            opt.AddPolicy("CorsPolicy", policy =>
+            {
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+            });
         });
         return services;
     }

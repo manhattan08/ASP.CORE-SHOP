@@ -9,10 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
-
-var app = builder.Build();
 builder.Services.AddApplicationServices(builder.Configuration);
+var app = builder.Build();
+
 
 app.UseMiddleware<ExceptionMiddleware>();
 
@@ -25,6 +24,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
