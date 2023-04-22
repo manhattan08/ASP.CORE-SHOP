@@ -1,10 +1,11 @@
 using ASPshop.Errors;
 using Infrastucture.Data;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPshop.Controllers;
 
+[Authorize]
 public class BuggyController : BaseApiController
 {
     private readonly StoreContext _context;
@@ -12,6 +13,12 @@ public class BuggyController : BaseApiController
     public BuggyController(StoreContext context)
     {
         _context = context;
+    }
+
+    [HttpGet("testauth")]
+    public ActionResult<string> GetSecretText()
+    {
+        return "secret stuff";
     }
     [HttpGet("notfound")]
     public ActionResult GetNotFoundRequest()
